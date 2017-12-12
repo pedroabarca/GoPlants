@@ -12,6 +12,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { LoginComponent } from './auth/login/login.component';
 import {AppRoutingModule} from './app-routing.module';
 import {FormsModule} from '@angular/forms';
+import {RouteGuard} from './auth/router-guar';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import {FormsModule} from '@angular/forms';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [RouteGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
