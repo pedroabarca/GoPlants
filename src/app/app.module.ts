@@ -11,6 +11,7 @@ import { AdministracionComponent } from './administracion/administracion.compone
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { LoginComponent } from './auth/login/login.component';
 import {AppRoutingModule} from './app-routing.module';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {AppRoutingModule} from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
