@@ -7,15 +7,18 @@ import * as firebase from 'firebase';
   styleUrls: ['./heater.component.css']
 })
 export class HeaterComponent implements OnInit {
-  isLoggedin: boolean = false;
+  isLoggedIn: boolean = false;
   constructor() { }
 
   ngOnInit() {
-    firebase.auth().onAuthStateChanged(userData=>{
-      if (userData && userData.emailVerified){
-
+    firebase.auth().onAuthStateChanged(userData => {
+      // we are logged in
+      if (userData && userData.emailVerified) {
+        this.isLoggedIn = true;
+      }else {
+        this.isLoggedIn = false;
       }
-    })
+    });
 
   }
 

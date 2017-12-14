@@ -4,15 +4,15 @@
       <a class="navbar-brand" routerLink="/">GOPLANTS</a>
     </div>
     <ul class="nav navbar-nav">
-      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="active"><a routerLink="/">¿Quiénes Somos?</a></li>
-      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/juancastroblanco">Parque Nacional Juan Castro Blanco</a></li>
-      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf="isLoggedIn"><a routerLink="/perfil">Perfil</a></li>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">¿Quiénes Somos?</a></li>
+      <li routerLinkActive="active"><a routerLink="/juancastroblanco">Parque Nacional Juan Castro Blanco</a></li>
+      <li routerLinkActive="active" *ngIf="isLoggedIn"><a routerLink="/perfil">Perfil</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf="isLoggedIn"><a routerLink="/administracion">Administración</a></li>
+      <li routerLinkActive="active" *ngIf="isLoggedIn"><a routerLink="/administracion">Administración</a></li>
       <li><a routerLink="/signup"><span class="glyphicon glyphicon-info-sign"></span> Registrate</a></li>
       <li><a routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
-      <li><a routerLink="/logout"><span class="glyphicon glyphicon-log-out" *ngIf="isLoggedIn"></span> Salir</a></li>
+      <li *ngIf="isLoggedIn"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
     </ul>
   </div>
 </nav>

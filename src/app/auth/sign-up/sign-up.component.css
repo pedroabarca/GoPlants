@@ -1,0 +1,31 @@
+@media (min-width: 1024px){
+  .container{
+    width: auto;
+  }
+}
+.panel{
+  background-color: black;
+  border-color: black;
+  color: white;
+}
+.input-group-addon
+{
+  background-color: forestgreen;
+  border-color: forestgreen;
+  color: white;
+}
+.form-control:focus
+{
+  background-color: black;
+  border-color: forestgreen;
+  color: white;
+}
+.btn{
+  background-color: forestgreen;
+  border-color: forestgreen;
+}
+.btn:focus{
+  background-color: chartreuse;
+  border-color: forestgreen;
+}
+.form-signup input[type="text"],.form-signup input[type="password"] { border: 1px solid forestgreen; }
