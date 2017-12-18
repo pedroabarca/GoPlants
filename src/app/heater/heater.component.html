@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" routerLink="/">GOPLANTS</a>
+    <div class="navbar-brand">
+      GoPlant$
     </div>
     <ul class="nav navbar-nav">
       <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">¿Quiénes Somos?</a></li>
@@ -9,6 +9,7 @@
       <li routerLinkActive="active" *ngIf="isLoggedIn"><a routerLink="/perfil">Perfil</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+      <li><a style="padding: 0%" routerLink="/"><img src="../../assets/logo.png" alt="GOplantslogo"></a></li>
       <li routerLinkActive="active" *ngIf="isLoggedIn"><a routerLink="/administracion">Administración</a></li>
       <li><a routerLink="/signup"><span class="glyphicon glyphicon-info-sign"></span> Registrate</a></li>
       <li><a routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>

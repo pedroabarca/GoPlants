@@ -20,8 +20,21 @@ export class SignUpComponent implements OnInit {
     const password = form.value.password;
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(userData => {
-        console.log(userData);
-      });
+        userData.sendEmailVerification();
+
+        return firebase.database().ref('users/'+ userData.uid).set({
+          email: email,
+          name: fullname,
+          uid: userData.uid,
+          registrationDate: new Date().toString()
+        })
+          .then( () => {
+            firebase.auth().signOut();
+          });
+      })
+      .catch(err => {
+          console.log(err);
+        });
   }
 
 }
