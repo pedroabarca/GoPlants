@@ -3,6 +3,8 @@ import {NgForm} from '@angular/forms';
 import * as firebase from 'firebase';
 import {NotificationService} from '../../shared/notification.service';
 import {MyFireService} from '../../shared/myfire.service';
+import {UserService} from '../../shared/user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,9 @@ import {MyFireService} from '../../shared/myfire.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private notifier: NotificationService, private myFire: MyFireService) { }
+  constructor(private notifier: NotificationService, private myFire: MyFireService,
+              private userService: UserService, private router: Router) { }
+
 
   ngOnInit() {
   }
@@ -33,7 +37,8 @@ export class LoginComponent implements OnInit {
       })
       .then(userDataFromDataBase => {
         if (userDataFromDataBase) {
-          console.log(userDataFromDataBase);
+          this.userService.set(userDataFromDataBase);
+          this.router.navigate(['/perfil']);
 
         }
       })

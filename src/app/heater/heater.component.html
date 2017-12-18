@@ -9,11 +9,19 @@
       <li routerLinkActive="active" *ngIf="isLoggedIn"><a routerLink="/perfil">Perfil</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown" *ngIf="isLoggedIn">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="javascript: void(0)"><span class="user-name-display">{{name}}</span>
+          <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="javascript:void(0)"><span class="user-title">Email: </span><span class="user-data">{{email}}</span></a></li>
+          <li><a href="javascript:void(0)"><span class="user-title">Uid: </span><span class="user-data">{{uid}}</span></a></li>
+        </ul>
+      </li>
       <li><a style="padding: 0%" routerLink="/"><img src="../../assets/logo.png" alt="GOplantslogo"></a></li>
       <li routerLinkActive="active" *ngIf="isLoggedIn"><a routerLink="/administracion">Administración</a></li>
-      <li><a routerLink="/signup"><span class="glyphicon glyphicon-info-sign"></span> Registrate</a></li>
-      <li><a routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
-      <li *ngIf="isLoggedIn"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
+      <li *ngIf="!isLoggedIn"><a routerLink="/signup"><span class="glyphicon glyphicon-info-sign"></span> Registrate</a></li>
+      <li *ngIf="!isLoggedIn"><a routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
+      <li *ngIf="isLoggedIn" (click)="onLogout()"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
     </ul>
   </div>
 </nav>
