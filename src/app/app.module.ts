@@ -13,6 +13,8 @@ import { LoginComponent } from './auth/login/login.component';
 import {AppRoutingModule} from './app-routing.module';
 import {FormsModule} from '@angular/forms';
 import {RouteGuard} from './auth/router-guar';
+import { NotificationComponent } from './notification/notification.component';
+import {NotificationService} from './shared/notification.service';
 
 
 @NgModule({
@@ -24,14 +26,15 @@ import {RouteGuard} from './auth/router-guar';
     PerfilComponent,
     AdministracionComponent,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [RouteGuard],
+  providers: [RouteGuard, NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
