@@ -15,6 +15,7 @@ import {FormsModule} from '@angular/forms';
 import {RouteGuard} from './auth/router-guar';
 import { NotificationComponent } from './notification/notification.component';
 import {NotificationService} from './shared/notification.service';
+import {MyFireService} from './shared/myfire.service';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import {NotificationService} from './shared/notification.service';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [RouteGuard, NotificationService],
+  providers: [RouteGuard, NotificationService, MyFireService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
